@@ -15,7 +15,8 @@ for message in st.session_state.messages:
 
 def generate_response(prompt_input):
     inputs = {"input": {"question": prompt_input}}
-    response = requests.post("http://localhost:8000/chatGPT-turbo/invoke", json=inputs)
+    #response = requests.post("http://localhost:8000/chatGPT-turbo/invoke", json=inputs)
+    response = requests.post("https://3592-173-231-123-226.ngrok-free.app/chatGPT-turbo/invoke", json=inputs)
     return response.json()["output"]["answer"]
 
 # User-provided prompt
